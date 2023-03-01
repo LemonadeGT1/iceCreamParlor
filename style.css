@@ -1,0 +1,21 @@
+
+body{
+  background-color: blanchedalmond;
+  color: saddlebrown;
+}
+
+.product{
+  background-color: cornsilk;
+  padding: 1em;
+  width: auto;
+}
+
+.product img{
+  height: 20vh;
+  width: 15vw;
+  object-fit: cover;
+  object-position: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
