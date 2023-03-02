@@ -11,7 +11,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style.css">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -33,9 +38,9 @@
   }
 </style>
 
-<body class="debug">
+<body>
   <header class="container">
-    <div class="row">
+    <div class="row bg-warning">
       <div class="col-12">
         <h2>Michael's Ice Cream Parlor</h2>
       </div>
@@ -43,17 +48,132 @@
   </header>
 
   <main class="container">
-    <div class="row">
+    <div class="row p-3 ">
       <!-- //!SECTION - Receipt -->
-      <div class="col-5" id="receipts">
-        <p>Receipt</p>
+      <div class="col-4 bg-light">
+        <div class="row bg-info">
+          <div class="col-3 text-center">Item</div>
+          <div class="col-3 text-center">Quantity</div>
+          <div class="col-3 text-end">Price</div>
+          <div class="col-3 text-end">Total</div>
+        </div>
+        <section class="row">
+          <div class="col-12" id="receipts"></div>
+        </section>
+        <section class="row">
+          <div class="col-12 text-end mt-5"><button class="btn btn-info" onclick="clearAll()">Check Out</button></div>
+        </section>
       </div>
-      <!-- //!SECTION - Options -->
-      <div class="col-7" id="products">
 
-        <div class="product">
-          <img src="https://celebratingsweets.com/wp-content/uploads/2014/04/Cookie-Dough-Ice-Cream-1-5.jpg" alt="Cookie Dough">
-          <h5>Cookie Dough <span>$4</span></h5>
+      <!-- //!SECTION - Options -->
+      <div class="col-8 " id="products">
+        <div class="row">
+          <div class="col-12 d-flex flex-wrap justify-content-around align-items-start">
+
+            <div class="card">
+              <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Sprinkles2.jpg" alt="Sprinkles">
+              <div class="card-body">
+                <p class="card-text text-center">Sprinkles <span class="price">$1</span></p>
+              </div>
+              <div class="controls p-1 text-center">
+                <p>Toppings: <button class="btn btn-warning" onclick="alterToppingQty('Sprinkles', 'add')">+1</button>
+                  <button class="btn btn-warning" onclick="alterToppingQty('Sprinkles', 'subtract')">-1</button>
+                  <button class="btn btn-warning" onclick="alterToppingQty('Sprinkles', 'remove')">0</button></p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top" src="https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/chocolate-chips.jpg?quality=82&strip=1&resize=640%2C360" alt="Chocolate Chips">
+              <div class="card-body">
+                <p class="card-text text-center">Chocolate Chips <span class="price">$2</span></p>
+              </div>
+              <div class="controls p-1 text-center">
+                <p>Toppings: <button class="btn btn-warning" onclick="alterToppingQty('Chocolate Chips', 'add')">+1</button>
+                  <button class="btn btn-warning" onclick="alterToppingQty('Chocolate Chips', 'subtract')">-1</button>
+                  <button class="btn btn-warning" onclick="alterToppingQty('Chocolate Chips', 'remove')">0</button></p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12"><hr></div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 d-flex flex-wrap justify-content-around align-items-start">
+            
+            <div class="card">
+              <img class="card-img-top" src="https://celebratingsweets.com/wp-content/uploads/2014/04/Cookie-Dough-Ice-Cream-1-5.jpg" alt="Cookie Dough">
+              <div class="card-body">
+                <p class="card-text text-center">Cookie Dough <span class="price">$1</span></p>
+              </div>
+              <div class="controls p-1 text-center">
+                <p>Scoops: <button class="btn btn-warning" onclick="alterScoopQty('Cookie Dough', 'add')">+1</button>
+                  <button class="btn btn-warning" onclick="alterScoopQty('Cookie Dough', 'subtract')">-1</button>
+                  <button class="btn btn-warning" onclick="alterScoopQty('Cookie Dough', 'remove')">0</button></p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ultimate-vanilla-ice-cream-1628511695.jpg" alt="Vanilla">
+              <div class="card-body">
+                <p class="card-text text-center">Vanilla <span class="price">$1</span></p>
+              </div>
+              <div class="controls p-1 text-center">
+                <p>Scoops: <button class="btn btn-warning" onclick="alterScoopQty('Vanilla', 'add')">+1</button>
+                  <button class="btn btn-warning" onclick="alterScoopQty('Vanilla', 'subtract')">-1</button>
+                  <button class="btn btn-warning" onclick="alterScoopQty('Vanilla', 'remove')">0</button></p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top" src="https://www.realfoodwithjessica.com/wp-content/uploads/2017/07/paleostrawberryicecream2.jpg" alt="Strawberry">
+              <div class="card-body">
+                <p class="card-text text-center">Strawberry <span class="price">$2</span></p>
+              </div>
+              <div class="controls p-1 text-center">
+                <p>Scoops: <button class="btn btn-warning" onclick="alterScoopQty('Strawberry', 'add')">+1</button>
+                  <button class="btn btn-warning" onclick="alterScoopQty('Strawberry', 'subtract')">-1</button>
+                  <button class="btn btn-warning" onclick="alterScoopQty('Strawberry', 'remove')">0</button></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12"><hr></div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 d-flex flex-wrap justify-content-around align-items-start">
+
+            <div class="card">
+              <img class="card-img-top" src="https://m.media-amazon.com/images/I/71VNjBMakfL._SL1500_.jpg" alt="Waffle Cone">
+              <div class="card-body">
+                <p class="card-text text-center">Waffle Cone <span class="price">$1</span></p>
+              </div>
+              <div class="controls p-1 text-center">
+                <p>Scoops: <button class="btn btn-warning" onclick="alterBaseQty('Waffle Cone', 'add')">+1</button>
+                  <button class="btn btn-warning" onclick="alterBaseQty('Waffle Cone', 'subtract')">-1</button>
+                  <button class="btn btn-warning" onclick="alterBaseQty('Waffle Cone', 'remove')">0</button></p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="card-img-top" src="http://images.wbmason.com/350/L_JOY66050.jpg" alt="Waffle Bowl">
+              <div class="card-body">
+                <p class="card-text text-center">Waffle Bowl <span class="price">$1</span></p>
+              </div>
+              <div class="controls p-1 text-center">
+                <p>Scoops: <button class="btn btn-warning" onclick="alterBaseQty('Waffle Bowl', 'add')">+1</button>
+                  <button class="btn btn-warning" onclick="alterBaseQty('Waffle Bowl', 'subtract')">-1</button>
+                  <button class="btn btn-warning" onclick="alterBaseQty('Waffle Bowl', 'remove')">0</button></p>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -61,7 +181,7 @@
   </main>
 
   <footer class="container">
-    <div class="row">
+    <div class="row bg-warning">
       <div class="col-12">Made by Michael Patience for Boise CodeWorks Wednesday, Week 2</div>
     </div>
   </footer>

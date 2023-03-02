@@ -4,18 +4,32 @@ body{
   color: saddlebrown;
 }
 
-.product{
-  background-color: cornsilk;
-  padding: 1em;
-  width: auto;
+.price{
+  font-size: 1.3em;
+  padding-left: 1em;
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
 }
 
-.product img{
-  height: 20vh;
-  width: 15vw;
+.card{
+  margin: .5em;
+  width: 13rem;
+}
+
+.card-image-top {
+  height: 16vh;
   object-fit: cover;
-  object-position: center;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  object-position: top;
 }
 
+.controls button{
+  font-family: 'Dosis', sans-serif;
+}
+
+
+#receipts.row :nth-child(even){
+  background-color: #dcdcdc;
+}
+#receipts.row :nth-child(odd){
+  background-color: #aaaaaa;
+}
