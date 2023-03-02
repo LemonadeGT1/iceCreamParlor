@@ -39,7 +39,7 @@
 </style>
 
 <body>
-  <header class="container">
+  <header class="container-fluid">
     <div class="row bg-warning">
       <div class="col-12">
         <h2>Michael's Ice Cream Parlor</h2>
@@ -58,7 +58,7 @@
           <div class="col-3 text-end">Total</div>
         </div>
         <section class="row">
-          <div class="col-12" id="receipts"></div>
+          <div class="col-12" id="receipts"><p class="text-end m-0">Grand Total: $0</p></div>
         </section>
         <section class="row">
           <div class="col-12 text-end mt-5"><button class="btn btn-info" onclick="clearAll()">Check Out</button></div>
@@ -68,9 +68,13 @@
       <!-- //!SECTION - Options -->
       <div class="col-8 " id="products">
         <div class="row">
-          <div class="col-12 d-flex flex-wrap justify-content-around align-items-start">
+          <div class="col-12 text-center"><h2>Toppings</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-around">
+            <div class="card-group">
 
-            <div class="card">
+            <div class="card border-warning">
               <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Sprinkles2.jpg" alt="Sprinkles">
               <div class="card-body">
                 <p class="card-text text-center">Sprinkles <span class="price">$1</span></p>
@@ -82,7 +86,7 @@
               </div>
             </div>
 
-            <div class="card">
+            <div class="card border-warning">
               <img class="card-img-top" src="https://www.eatthis.com/wp-content/uploads/sites/4/2020/05/chocolate-chips.jpg?quality=82&strip=1&resize=640%2C360" alt="Chocolate Chips">
               <div class="card-body">
                 <p class="card-text text-center">Chocolate Chips <span class="price">$2</span></p>
@@ -95,6 +99,8 @@
             </div>
 
           </div>
+
+          </div>
         </div>
 
         <div class="row">
@@ -102,41 +108,46 @@
         </div>
 
         <div class="row">
-          <div class="col-12 d-flex flex-wrap justify-content-around align-items-start">
-            
-            <div class="card">
-              <img class="card-img-top" src="https://celebratingsweets.com/wp-content/uploads/2014/04/Cookie-Dough-Ice-Cream-1-5.jpg" alt="Cookie Dough">
-              <div class="card-body">
-                <p class="card-text text-center">Cookie Dough <span class="price">$1</span></p>
-              </div>
-              <div class="controls p-1 text-center">
-                <p>Scoops: <button class="btn btn-warning" onclick="alterScoopQty('Cookie Dough', 'add')">+1</button>
-                  <button class="btn btn-warning" onclick="alterScoopQty('Cookie Dough', 'subtract')">-1</button>
-                  <button class="btn btn-warning" onclick="alterScoopQty('Cookie Dough', 'remove')">0</button></p>
-              </div>
-            </div>
+          <div class="col-12 text-center"><h2>Flavors</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-around">
+            <div class="card-group">
 
-            <div class="card">
-              <img class="card-img-top" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ultimate-vanilla-ice-cream-1628511695.jpg" alt="Vanilla">
-              <div class="card-body">
-                <p class="card-text text-center">Vanilla <span class="price">$1</span></p>
+                <div class="card border-warning">
+                  <img class="card-img-top" src="https://celebratingsweets.com/wp-content/uploads/2014/04/Cookie-Dough-Ice-Cream-1-5.jpg" alt="Cookie Dough">
+                <div class="card-body">
+                  <p class="card-text text-center">Cookie Dough <span class="price">$1</span></p>
+                </div>
+                <div class="controls p-1 text-center">
+                  <p>Scoops: <button class="btn btn-warning" onclick="alterScoopQty('Cookie Dough', 'add')">+1</button>
+                    <button class="btn btn-warning" onclick="alterScoopQty('Cookie Dough', 'subtract')">-1</button>
+                    <button class="btn btn-warning" onclick="alterScoopQty('Cookie Dough', 'remove')">0</button></p>
+                </div>
               </div>
-              <div class="controls p-1 text-center">
-                <p>Scoops: <button class="btn btn-warning" onclick="alterScoopQty('Vanilla', 'add')">+1</button>
-                  <button class="btn btn-warning" onclick="alterScoopQty('Vanilla', 'subtract')">-1</button>
-                  <button class="btn btn-warning" onclick="alterScoopQty('Vanilla', 'remove')">0</button></p>
+              
+              <div class="card border-warning">
+                <img class="card-img-top" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/ultimate-vanilla-ice-cream-1628511695.jpg" alt="Vanilla">
+                <div class="card-body">
+                  <p class="card-text text-center">Vanilla <span class="price">$1</span></p>
+                </div>
+                <div class="controls p-1 text-center">
+                  <p>Scoops: <button class="btn btn-warning" onclick="alterScoopQty('Vanilla', 'add')">+1</button>
+                    <button class="btn btn-warning" onclick="alterScoopQty('Vanilla', 'subtract')">-1</button>
+                    <button class="btn btn-warning" onclick="alterScoopQty('Vanilla', 'remove')">0</button></p>
+                </div>
               </div>
-            </div>
-
-            <div class="card">
-              <img class="card-img-top" src="https://www.realfoodwithjessica.com/wp-content/uploads/2017/07/paleostrawberryicecream2.jpg" alt="Strawberry">
-              <div class="card-body">
-                <p class="card-text text-center">Strawberry <span class="price">$2</span></p>
-              </div>
-              <div class="controls p-1 text-center">
-                <p>Scoops: <button class="btn btn-warning" onclick="alterScoopQty('Strawberry', 'add')">+1</button>
-                  <button class="btn btn-warning" onclick="alterScoopQty('Strawberry', 'subtract')">-1</button>
-                  <button class="btn btn-warning" onclick="alterScoopQty('Strawberry', 'remove')">0</button></p>
+              
+              <div class="card border-warning">
+                <img class="card-img-top" src="https://www.realfoodwithjessica.com/wp-content/uploads/2017/07/paleostrawberryicecream2.jpg" alt="Strawberry">
+                <div class="card-body">
+                  <p class="card-text text-center">Strawberry <span class="price">$2</span></p>
+                </div>
+                <div class="controls p-1 text-center">
+                  <p>Scoops: <button class="btn btn-warning" onclick="alterScoopQty('Strawberry', 'add')">+1</button>
+                    <button class="btn btn-warning" onclick="alterScoopQty('Strawberry', 'subtract')">-1</button>
+                    <button class="btn btn-warning" onclick="alterScoopQty('Strawberry', 'remove')">0</button></p>
+                </div>
               </div>
             </div>
           </div>
@@ -147,30 +158,36 @@
         </div>
 
         <div class="row">
-          <div class="col-12 d-flex flex-wrap justify-content-around align-items-start">
+          <div class="col-12 text-center"><h2>Base</h2></div>
+        </div>
+        <div class="row">
+          <div class="col-12 d-flex justify-content-around">
+            <div class="card-group">
 
-            <div class="card">
-              <img class="card-img-top" src="https://m.media-amazon.com/images/I/71VNjBMakfL._SL1500_.jpg" alt="Waffle Cone">
-              <div class="card-body">
-                <p class="card-text text-center">Waffle Cone <span class="price">$1</span></p>
+              <div class="card border-warning">
+                <img class="card-img-top" src="https://m.media-amazon.com/images/I/71VNjBMakfL._SL1500_.jpg" alt="Waffle Cone">
+                <div class="card-body">
+                  <p class="card-text text-center">Waffle Cone <span class="price">$1</span></p>
+                </div>
+                <div class="controls p-1 text-center">
+                  <p>Scoops: <button class="btn btn-warning" onclick="alterBaseQty('Waffle Cone', 'add')">+1</button>
+                    <button class="btn btn-warning" onclick="alterBaseQty('Waffle Cone', 'subtract')">-1</button>
+                    <button class="btn btn-warning" onclick="alterBaseQty('Waffle Cone', 'remove')">0</button></p>
+                </div>
               </div>
-              <div class="controls p-1 text-center">
-                <p>Scoops: <button class="btn btn-warning" onclick="alterBaseQty('Waffle Cone', 'add')">+1</button>
-                  <button class="btn btn-warning" onclick="alterBaseQty('Waffle Cone', 'subtract')">-1</button>
-                  <button class="btn btn-warning" onclick="alterBaseQty('Waffle Cone', 'remove')">0</button></p>
-              </div>
-            </div>
 
-            <div class="card">
-              <img class="card-img-top" src="http://images.wbmason.com/350/L_JOY66050.jpg" alt="Waffle Bowl">
-              <div class="card-body">
-                <p class="card-text text-center">Waffle Bowl <span class="price">$1</span></p>
+              <div class="card border-warning">
+                <img class="card-img-top" src="http://images.wbmason.com/350/L_JOY66050.jpg" alt="Waffle Bowl">
+                <div class="card-body">
+                  <p class="card-text text-center">Waffle Bowl <span class="price">$1</span></p>
+                </div>
+                <div class="controls p-1 text-center">
+                  <p>Scoops: <button class="btn btn-warning" onclick="alterBaseQty('Waffle Bowl', 'add')">+1</button>
+                    <button class="btn btn-warning" onclick="alterBaseQty('Waffle Bowl', 'subtract')">-1</button>
+                    <button class="btn btn-warning" onclick="alterBaseQty('Waffle Bowl', 'remove')">0</button></p>
+                </div>
               </div>
-              <div class="controls p-1 text-center">
-                <p>Scoops: <button class="btn btn-warning" onclick="alterBaseQty('Waffle Bowl', 'add')">+1</button>
-                  <button class="btn btn-warning" onclick="alterBaseQty('Waffle Bowl', 'subtract')">-1</button>
-                  <button class="btn btn-warning" onclick="alterBaseQty('Waffle Bowl', 'remove')">0</button></p>
-              </div>
+
             </div>
 
           </div>
@@ -180,8 +197,8 @@
     </div>
   </main>
 
-  <footer class="container">
-    <div class="row bg-warning">
+  <footer class="container-fluid">
+    <div class="row bg-warning p-2 text-center">
       <div class="col-12">Made by Michael Patience for Boise CodeWorks Wednesday, Week 2</div>
     </div>
   </footer>

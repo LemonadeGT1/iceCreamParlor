@@ -4,6 +4,10 @@ body{
   color: saddlebrown;
 }
 
+h2{
+  font-family: 'Dosis', sans-serif;
+}
+
 .price{
   font-size: 1.3em;
   padding-left: 1em;
@@ -17,9 +21,6 @@ body{
 }
 
 .card-image-top {
-  height: 16vh;
-  object-fit: cover;
-  object-position: top;
 }
 
 .controls button{
